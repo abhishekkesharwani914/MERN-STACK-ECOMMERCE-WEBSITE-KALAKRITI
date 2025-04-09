@@ -75,10 +75,10 @@ const CheckoutPage = () => {
     try{
       const stripe = await loadStripe('pk_test_51RBvQFQ01Xh4qT9ASgXi6ugOushCM1qEFs83CVWXVW5cS6hdl1HPDWDKGGNuAJ3Xl2kQW0INbWvzMKL3pi74KgzJ00nZoZ0yR3');
         const res = await stripePayment(
-          cartId,
-          shippingInfo,
-          totalAmount,
-          paymentMethod= 'Card',
+          // cartId,
+          // shippingInfo,
+          // totalAmount,
+          // paymentMethod= 'Card',
           itemss
         );
         console.log(res.data)

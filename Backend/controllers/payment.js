@@ -12,18 +12,18 @@ module.exports.stripePayment = async (req,res) => {
 
         const { userId, cartId, shippingInfo, totalAmount, paymentMethod,itemss } = req.body;
         
-              if (!userId || !cartId || !shippingInfo || !totalAmount || !paymentMethod) {
-                return res.json({ success: false, message: 'Missing required fields' });
-              }
+            //   if (!userId || !cartId || !shippingInfo || !totalAmount || !paymentMethod) {
+            //     return res.json({ success: false, message: 'Missing required fields' });
+            //   }
         
-              const user = await User.findById(userId)
-              const cart = await Cart.findById(cartId);
-              const items = cart.items.map((item) => ({
-                itemId: item.itemId,
-                quantity: item.quantity,
-              }));
+            //   const user = await User.findById(userId)
+            //   const cart = await Cart.findById(cartId);
+            //   const items = cart.items.map((item) => ({
+            //     itemId: item.itemId,
+            //     quantity: item.quantity,
+            //   }));
         
-              const order = new Order({userId, cartId, items, shippingInfo, totalAmount,paymentMethod});
+            //   const order = new Order({userId, cartId, items, shippingInfo, totalAmount,paymentMethod});
 
             const line_items = itemss.map((item) => ({
                 price_data: {
@@ -50,33 +50,32 @@ module.exports.stripePayment = async (req,res) => {
 
             
 
-            //   Saving Order
-              await order.save();
+            // //   Saving Order
+            //   await order.save();
         
-              user.orders.push(order._id);
-              await user.save();
+            //   user.orders.push(order._id);
+            //   await user.save();
         
-              // Removing cart after order placing
-              await Cart.findByIdAndDelete(cartId);
+            //   // Removing cart after order placing
+            //   await Cart.findByIdAndDelete(cartId);
         
-            // Sending Order Confirmation Email
-              const mailOptions = {
-                from: process.env.SENDER_MAIL,
-                to: user.email,
-                subject: "Order Confirmation",
-                // text: `Welcome to KalaKriti Pvt Ltd. Your account has been created with email id: ${email}`,
-                html: ORDER_CONFIRM_TEMPLATE
-              };
+            // // Sending Order Confirmation Email
+            //   const mailOptions = {
+            //     from: process.env.SENDER_MAIL,
+            //     to: user.email,
+            //     subject: "Order Confirmation",
+            //     // text: `Welcome to KalaKriti Pvt Ltd. Your account has been created with email id: ${email}`,
+            //     html: ORDER_CONFIRM_TEMPLATE
+            //   };
         
-              await transporter.sendMail(mailOptions);
+            //   await transporter.sendMail(mailOptions);
               if (session.id) {
-                console.log("session id",session.id)
-                res.json({ success: true, id: session.id, message: 'Order placed successfully' });
+                res.json({ success: true, id: session.id });
               } else {
                 res.json({ success: false, message: 'Failed to create session' });
               }
 
     } catch (err) {
         res.json({ error: err.message });
-    }
+    }   
 }

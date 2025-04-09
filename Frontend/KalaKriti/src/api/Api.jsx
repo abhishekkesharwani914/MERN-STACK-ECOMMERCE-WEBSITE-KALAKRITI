@@ -145,6 +145,6 @@ export const orderItems = () => {
 }
 
 // Stipe Payment Method
-export const stripePayment = (cartId, shippingInfo, totalAmount, paymentMethod,itemss) => {
-    return api.post('/payment/stripe', {cartId, shippingInfo, totalAmount, paymentMethod,itemss})
+export const stripePayment = (itemss) => {
+    return api.post('/payment/stripe', {itemss})
 }
