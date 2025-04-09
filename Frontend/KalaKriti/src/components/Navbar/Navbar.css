@@ -1,0 +1,40 @@
+.hamburger {
+    display: none;
+}
+.hamburger-menu {
+    display: none;
+    transition:  0.5s ease-in-out;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        font-size: 25px;
+    }
+    .activate {
+        display: flex;
+    }
+    
+    .navbar-content {
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width: 640px) {
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        font-size: 25px;
+    }
+    .activate {
+        display: block;
+    }
+    .navbar-content {
+        display: none;
+    }
+    
+}

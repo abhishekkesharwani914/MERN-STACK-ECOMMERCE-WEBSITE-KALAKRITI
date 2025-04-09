@@ -1,0 +1,9 @@
+.review-main {
+    padding-bottom: 0;
+}
+
+.review-content{
+    height: 10rem;
+    width: 15rem;
+    /* overflow: scroll;  */
+}

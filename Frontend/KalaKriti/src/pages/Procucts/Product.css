@@ -1,0 +1,24 @@
+
+@media screen and (max-width: 778px) {
+    .main {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (min-width: 1230px) {
+    .main{
+        height: 30rem;
+    }
+    
+    .content-div{
+        height: 25rem;
+        overflow: scroll;
+    }
+    .content-div::-webkit-scrollbar {
+        display: none;
+    }
+    
+}
+
+
