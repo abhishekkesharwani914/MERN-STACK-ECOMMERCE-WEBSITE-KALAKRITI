@@ -46,7 +46,7 @@ function Home() {
             {items.map(item => (
             <li key={item._id}>
                 
-                <a href={`/${item._id}`}>
+                <a href={`${import.meta.env.VITE_BACKEND_URL}/${item._id}`}>
                 <Card sx={{ maxWidth: 345 }}>
                     <div className='flex justify-center items-center absolute z-10 text-lg font-bold text-left ml-75 mt-4 p-4 z-99 bg-[#f1f1f1] h-5 w-5 rounded-full' id={`${item._id}`} onClick={handleClick}>
                         <i className="fa-regular fa-heart text-black"></i>
