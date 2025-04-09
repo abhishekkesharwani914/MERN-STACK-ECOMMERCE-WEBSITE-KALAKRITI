@@ -143,3 +143,8 @@ export const checkout = (cartId, shippingInfo, totalAmount, paymentMethod) => {
 export const orderItems = () => {
     return api.get('/checkout')
 }
+
+// Stipe Payment Method
+export const stripePayment = (cartId, shippingInfo, totalAmount, paymentMethod,itemss) => {
+    return api.post('/payment/stripe', {cartId, shippingInfo, totalAmount, paymentMethod,itemss})
+}

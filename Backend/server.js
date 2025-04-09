@@ -19,6 +19,7 @@ const userRoute = require("./routes/users.js");
 const userDataRoute = require("./routes/userData.js");
 const cartRoute = require("./routes/cart.js");
 const orderRoute = require("./routes/order.js");
+const paymentRoute = require("./routes/payment.js");
 
 // Connection with Database
 main();
@@ -79,6 +80,7 @@ app.use(session(sessionOptions));
 app.use("/auth", userRoute); // user is getting from userRoute which is save in ./routes/user.js
 app.use("/user", userDataRoute);
 app.use("/cart", cartRoute);
+app.use('/payment', paymentRoute); // Payment route
 app.use('/checkout', orderRoute); // Order route
 app.use("/items/:id/reviews", reviewRoute); // reviews is getting from reviewRoute which is save in ./routes/review.js
 app.use("/", itemsRoute); // items is getting from itemsRoute which is save in ./routes/items.js

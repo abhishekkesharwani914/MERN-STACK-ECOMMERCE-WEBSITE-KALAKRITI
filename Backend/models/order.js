@@ -28,6 +28,12 @@ const orderSchema = new Schema({
   },
   totalAmount: Number,
   paymentMethod: String,
+  paymentStatus: {
+    type: String,
+    enum: ['Pending', 'Paid', 'Failed'],
+    default: 'Pending',
+  },
+  paymentId: String, // transaction ID from Stripe/PayPal
   createdAt: { type: Date, default: Date.now }
 });
 

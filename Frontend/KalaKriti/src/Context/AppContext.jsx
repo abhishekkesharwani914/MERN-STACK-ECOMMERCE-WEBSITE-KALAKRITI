@@ -101,7 +101,6 @@ export const AppContextProvider = (props) => {
       const fetchOrderData = async () => {
           try {
               const res = await orderItems();
-              console.log(res)
               if (res.data.success) {
                 setOrders(Array.isArray(res.data.orders) ? res.data.orders : [res.data.orders]);
               }
@@ -122,7 +121,7 @@ export const AppContextProvider = (props) => {
 
     // value is an object which is used to pass the data to the child components and it is used to store the data in the context API
     const value = {
-        isLoggedIn,setIsLoggedIn,userData,setUserData, getUserData,cart, setCart, cartItems, addCartItems, removeCart, updateQuantity, removeItem, orders,loading
+        isLoggedIn,setIsLoggedIn,userData,setUserData, getUserData,cart, setCart, cartItems, addCartItems, removeCart, updateQuantity, removeItem, orders,loading, fetchOrderData
     }
 
     return (
