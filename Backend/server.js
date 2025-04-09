@@ -67,11 +67,12 @@ app.use(session(sessionOptions));
 
 // Routes
 app.use("/", itemsRoute); // items is getting from itemsRoute which is save in ./routes/items.js
-app.use("/items/:id/reviews", reviewRoute); // reviews is getting from reviewRoute which is save in ./routes/review.js
 app.use("/auth", userRoute); // user is getting from userRoute which is save in ./routes/user.js
 app.use("/user", userDataRoute);
 app.use("/cart", cartRoute);
 app.use('/checkout', orderRoute); // Order route
+app.use("/items/:id/reviews", reviewRoute); // reviews is getting from reviewRoute which is save in ./routes/review.js
+
 
 // Error Handling Route
 app.all("*", (req, res, next) => {
