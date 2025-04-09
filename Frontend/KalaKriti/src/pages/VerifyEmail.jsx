@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef } from 'react'
 import { toast } from 'react-toastify';
 import { AppContent } from '../Context/AppContext';
-import { verifyEmail } from '../api/api';
+import { verifyEmail } from '../api/Api.jsx';
 import { useNavigate } from 'react-router';
 
 const VerifyEmail = () => {

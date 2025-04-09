@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { createContext } from 'react'
-import {userDetail, authState ,getCartItems, addToCart, removeCart, updateCartItem,removeCartItem,orderItems} from '../api/Api'
+import {userDetail, authState ,getCartItems, addToCart, removeCart, updateCartItem,removeCartItem,orderItems} from '../api/Api.jsx'
 import {toast} from "react-toastify"
 
 export const AppContent = createContext();

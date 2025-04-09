@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { useNavigate } from 'react-router'
-import { sendResetPasswordOtp, resetPassword } from '../api/api'
+import { sendResetPasswordOtp, resetPassword } from '../api/Api.jsx'
 import { toast } from 'react-toastify'
 
 const ResetPassword = () => {

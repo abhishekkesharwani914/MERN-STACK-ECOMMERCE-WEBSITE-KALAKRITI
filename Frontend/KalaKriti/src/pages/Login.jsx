@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router';
 import { AppContent } from '../Context/AppContext';
-import {login, register} from '../api/api'
+import {login, register} from '../api/Api.jsx'
 import { toast } from 'react-toastify';
 
 const Login = () => {

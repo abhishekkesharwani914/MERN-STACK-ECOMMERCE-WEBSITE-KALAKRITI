@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { toast } from 'react-toastify';
 import { AppContent } from '../Context/AppContext';
 import { useNavigate } from 'react-router';
-import { checkout } from '../api/api'; // Adjust the import path as necessary
+import { checkout } from '../api/Api.jsx'; // Adjust the import path as necessary
 
 const CheckoutPage = () => {
 

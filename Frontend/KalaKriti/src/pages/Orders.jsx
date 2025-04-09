@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { orderItems } from '../api/Api'
+import React, { useContext} from 'react'
 import Loading from '../components/Loading.jsx'
 import { AppContent } from '../Context/AppContext.jsx'
 

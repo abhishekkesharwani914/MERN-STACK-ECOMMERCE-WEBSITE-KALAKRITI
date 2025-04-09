@@ -3,7 +3,7 @@ import { useState } from 'react';
 import "./Reviews.css"
 import Button from '@mui/material/Button';
 import { useParams } from 'react-router';
-import { postReview } from '../../api/api';
+import { postReview } from '../../api/Api.jsx';
 
 function Reviews({reviews, setReviews}) {
 

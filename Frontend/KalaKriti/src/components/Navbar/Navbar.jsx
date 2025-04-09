@@ -4,7 +4,7 @@ import "./Navbar.css"
 import { NavLink, useNavigate } from 'react-router';
 import { useContext } from 'react';
 import { AppContent } from '../../Context/AppContext';
-import { logout, emailVerificationOtp } from '../../api/Api';
+import { logout, emailVerificationOtp } from '../../api/Api.jsx';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 
