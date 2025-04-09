@@ -23,7 +23,8 @@ export const AppContextProvider = (props) => {
                 setOrders(Array.isArray(res.data.orders) ? res.data.orders : [res.data.orders]);
               }
           } catch (error) {
-              console.error("Error fetching data:", error);
+              toast.error(error.message)
+              console.log("Error fetching data:", error);
           } finally {
             setLoading(false)
           }

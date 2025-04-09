@@ -20,7 +20,7 @@ export const getItems = () =>{
 // This method is used to get the item details by id. It sends a get request to the backend with the id of the item.
 // It returns a promise which resolves to the response of the request.
 export const getID = (id) => {
-    return api.get(`items/${id}`)
+    return api.get(`/${id}`)
 }
 
 //post review method
