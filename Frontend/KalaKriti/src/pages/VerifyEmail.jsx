@@ -41,7 +41,7 @@ const VerifyEmail = () => {
       console.log(response)
       if(response.data.success) {
         getUserData();
-        navigate('/items')
+        navigate('/')
         toast.success(response.data.message)
       }else{
         toast.error(response.data.message)

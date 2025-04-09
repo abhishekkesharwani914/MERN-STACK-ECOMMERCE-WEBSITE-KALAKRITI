@@ -10,7 +10,7 @@ function Footer () {
                     <Link to={"https://www.instagram.com/_a.b.h.i.s.h.e.k_001_official/"}>Contact Us</Link>
                     <Link to={"https://www.instagram.com/_a.b.h.i.s.h.e.k_001_official/"}>About Us</Link>
                     <Link to={"https://www.instagram.com/_a.b.h.i.s.h.e.k_001_official/"}>Careers</Link>
-                    <Link to={"/items"}>KalaKriti Stories</Link>
+                    <Link to={"/"}>KalaKriti Stories</Link>
                 </div>
                 <div className="content Help">
                     <h1>HELP</h1>

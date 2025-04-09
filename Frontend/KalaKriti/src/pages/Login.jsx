@@ -29,7 +29,7 @@ const Login = () => {
         if(res.data.success) {
           setIsLoggedIn(true)
           getUserData()
-          navigate('/items')
+          navigate('/')
           toast.success(`Welcome to KalaKriti`)
         } else {
           toast.error(res.data.message)
@@ -41,7 +41,7 @@ const Login = () => {
         if(res.data.success) {
           setIsLoggedIn(true)
           await getUserData()
-          navigate('/items')
+          navigate('/')
           toast.success(`Welcome back! to KalaKriti`)
         } else {
           toast.error(res.data.message)

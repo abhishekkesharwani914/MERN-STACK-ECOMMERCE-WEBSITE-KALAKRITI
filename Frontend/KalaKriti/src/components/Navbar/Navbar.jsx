@@ -40,7 +40,7 @@ function Navbar() {
             })
             response.data.success && setIsLoggedIn(false)
             response.data.success && setUserData(false)
-            navigate("/items")
+            navigate("/")
             toast.success(`${response.data.message}`)
         }catch (err) {
             toast.error(err.message)
@@ -63,7 +63,7 @@ function Navbar() {
         <>
             <div className="navbar flex justify-between items-center p-6 h-16 bg-[#d26c3d] text-white sticky top-0 z-100">
                 <div>
-                    <NavLink to={"/items"} className="m-auto text-3xl font-bold">KalaKriti</NavLink>
+                    <NavLink to={"/"} className="m-auto text-3xl font-bold">KalaKriti</NavLink>
                 </div>
                 <div className={`navbar-content flex justify-start  items-center w-2/3 lg:2/3 md:1/2 md:ml-4 md:justify-evenly`}>
                     <div className="flex justify-between items-center w-2/3 lg:2/3 md: 1/2 md:mr-4 md:justify-center"> 
@@ -72,9 +72,9 @@ function Navbar() {
                     </div>
                     <div className="nav-links ml-5 mr-5 text-lg font-normal">
                         <ul className="flex items-center">
-                            <NavLink to={"/items"} className={`inline-block w-full p-4 text-medium hover:text-[#332e2b] transition duration-250 ease-in-out`}>Account</NavLink>
+                            <NavLink to={"/"} className={`inline-block w-full p-4 text-medium hover:text-[#332e2b] transition duration-250 ease-in-out`}>Account</NavLink>
                             <NavLink to={"/orders"} className={`inline-block w-full p-4 text-medium hover:text-[#332e2b] transition duration-250 ease-in-out`}>Orders</NavLink>
-                            {/* <NavLink to={"/items"} className={`inline-block w-full p-4 text-medium hover:text-[#332e2b] transition duration-250 ease-in-out`}>About</NavLink> */}
+                            {/* <NavLink to={"/"} className={`inline-block w-full p-4 text-medium hover:text-[#332e2b] transition duration-250 ease-in-out`}>About</NavLink> */}
                             <NavLink to={"/cart"} className={`inline-block w-full p-4 text-medium hover:text-[#332e2b] transition duration-250 ease-in-out mr-2`}><i className="fa-solid fa-cart-plus relative"></i><span className='absolute text-sm'>{isLoggedIn? items.length: 0}</span></NavLink>
                             {userData? 
                             <NavLink className='p-4 h-8 w-8 flex justify-center items-center rounded-full bg-[#332e2b] text-white relative group'>
@@ -98,7 +98,7 @@ function Navbar() {
             </div>
             <div>
                 <ul className={`hamburger-menu flex flex-row justify-start items-center bg-[#d26c3d]/20 ${isOpen ? "activate" : ""}`}>
-                    <li className="pl-4 border-b-1  border-[#d26c3d] text-[#d26c3d] font-medium w-full cursor-pointer"><a href="/items  ">Account</a></li>
+                    <li className="pl-4 border-b-1  border-[#d26c3d] text-[#d26c3d] font-medium w-full cursor-pointer"><a href="/">Account</a></li>
                     <li className="pl-4 border-b-1  border-[#d26c3d] text-[#d26c3d] font-medium w-full cursor-pointer"><a href="/orders  ">Orders</a></li>
                     <li className="pl-4 border-b-1  border-[#d26c3d] text-[#d26c3d] font-medium w-full cursor-pointer"><a href="/cart  "><i className="fa-solid fa-cart-plus relative"><span className='absolute text-sm'>{items.length}</span></i></a></li>
                     <li className="pl-4 border-b-1  border-[#d26c3d] text-[#d26c3d] font-medium w-full cursor-pointer">
