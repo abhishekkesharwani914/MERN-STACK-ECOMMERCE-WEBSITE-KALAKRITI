@@ -21,8 +21,6 @@ export const AppContextProvider = (props) => {
               const res = await orderItems();
               if (res.data.success) {
                 setOrders(Array.isArray(res.data.orders) ? res.data.orders : [res.data.orders]);
-              } else {
-                setError('Could not fetch orders');
               }
           } catch (error) {
               console.error("Error fetching data:", error);

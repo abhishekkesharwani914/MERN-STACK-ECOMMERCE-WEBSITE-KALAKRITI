@@ -66,7 +66,15 @@ const Orders = () => {
                               </div>
                           </>
                         ) : (
-                          <p>Item details not found</p>
+                          <div className='flex justify-center min-h-screen my-5 px-6 sm:px-0'>
+                            <div className='flex flex-col gap-5'>
+                                <h1 className='text-3xl font-semibold text-center'>Your Order is Empty</h1>
+                                <p className='text-lg text-center'>Order now to see your order details.</p>
+                                <img src="https://cdn-icons-png.flaticon.com/512/11329/11329060.png" alt="" />
+                                <p></p>
+                            </div>
+                          </div>
+                          
                         )}
                       </li>
                     ))}
