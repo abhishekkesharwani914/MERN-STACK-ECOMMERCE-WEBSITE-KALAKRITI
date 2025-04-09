@@ -26,13 +26,22 @@ main();
 const allowedOrigins = ["http://localhost:5173","https://kalakriti-mern.vercel.app/","https://mern-stack-ecommerce-website-kalakriti.vercel.app/","https://mern-stack-ecommerce-git-0ff6cc-abhishekkesharwani914s-projects.vercel.app/","https://mern-stack-ecommerce-website-ka-abhishekkesharwani914s-projects.vercel.app/"];
 
 // Use of require module or npm packages
-app.use(cors({ origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  }, credentials:true})); // credentials true means we can send the cookies in the response
+
+const corsOptions = {
+    origin: 'https://kalakriti-mern.vercel.app',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true, // If your frontend needs to send cookies or authorization headers
+  };
+  
+  app.use(cors(corsOptions));
+
+// app.use(cors({ origin: function (origin, callback) {
+//     if (!origin || allowedOrigins.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   }, credentials:true})); // credentials true means we can send the cookies in the response
 app.use(express.urlencoded({extended: true }));
 app.use(express.json());
 app.use(cookieParser());
