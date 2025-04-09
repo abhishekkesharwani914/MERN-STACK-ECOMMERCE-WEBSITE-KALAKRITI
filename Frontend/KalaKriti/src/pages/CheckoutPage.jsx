@@ -19,7 +19,7 @@ const CheckoutPage = () => {
     country: '',
   });
 
-  const {cart,setCart} = useContext(AppContent);
+  const {cart,setCart,fetchOrderData} = useContext(AppContent);
   const items = cart?.items || []; // Use optional chaining and fallback to an empty array
   const cartId = cart._id
   let totalAmount = items.reduce((acc, item) => acc + (item.itemId.price * item.quantity), 0)
@@ -51,6 +51,7 @@ const CheckoutPage = () => {
       if(res.data.success){
         toast.success('Order placed successfully!');
         navigate('/orders'); // Redirect to orders page after placing the order 
+        fetchOrderData()
         setCart([])
         setShippingInfo({
           name: '',

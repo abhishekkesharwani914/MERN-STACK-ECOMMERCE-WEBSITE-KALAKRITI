@@ -50,9 +50,11 @@ module.exports.createOrder = async (req, res) => {
 module.exports.getOrders = async (req, res) => {
     const {userId} = req.body;
     try {
-      // const user = await User.findById(userId).populate({path: 'orders', populate:{path: 'items', populate: 'itemId'}});
-      const order = await Order.find({userId}).populate("items.itemId");
-        res.status(200).json({success: true,orders:order});
+        const order = await Order.find({userId}).populate("items.itemId");
+        if (!order) {
+            return res.json({ success: false, message: 'No orders found' });
+        }
+        res.json({success: true,orders:order});
     } catch (error) {
         res.status(500).json({ message: 'Error fetching orders', error });
     }

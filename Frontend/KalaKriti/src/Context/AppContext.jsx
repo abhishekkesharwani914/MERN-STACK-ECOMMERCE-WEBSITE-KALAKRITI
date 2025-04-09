@@ -14,20 +14,7 @@ export const AppContextProvider = (props) => {
     const [orders, setOrders] = useState([])
     const [loading, setLoading] = useState(true);
 
-    // Getting Order Details
-    const fetchOrderData = async () => {
-          try {
-              const res = await orderItems();
-              if (res.data.success) {
-                setOrders(Array.isArray(res.data.orders) ? res.data.orders : [res.data.orders]);
-              }
-          } catch (error) {
-              toast.error(error.message)
-              console.log("Error fetching data:", error);
-          } finally {
-            setLoading(false)
-          }
-    };
+    
 
     //Getting Cart Items
     const cartItems = async () => {
@@ -109,6 +96,22 @@ export const AppContextProvider = (props) => {
             toast.error(err.message)
         }
     }
+
+    // Getting Order Details
+      const fetchOrderData = async () => {
+          try {
+              const res = await orderItems();
+              console.log(res)
+              if (res.data.success) {
+                setOrders(Array.isArray(res.data.orders) ? res.data.orders : [res.data.orders]);
+              }
+          } catch (error) {
+              toast.error(error.message)
+              console.log("Error fetching data:", error);
+          } finally {
+            setLoading(false)
+          }
+    };
 
     // UseEffect to get the user state and user data when the component is mounted or refreshed
     useEffect(() => {

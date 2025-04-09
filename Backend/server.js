@@ -31,7 +31,7 @@ const corsOptions = {
     origin: 'https://kalakriti-mern.vercel.app',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true, // If your frontend needs to send cookies or authorization headers
-  };
+ };
   
   app.use(cors(corsOptions));
 
@@ -75,12 +75,13 @@ const sessionOptions = { //sessionOptions is an object which is used to create a
 app.use(session(sessionOptions));
 
 // Routes
-app.use("/", itemsRoute); // items is getting from itemsRoute which is save in ./routes/items.js
+
 app.use("/auth", userRoute); // user is getting from userRoute which is save in ./routes/user.js
 app.use("/user", userDataRoute);
 app.use("/cart", cartRoute);
 app.use('/checkout', orderRoute); // Order route
 app.use("/items/:id/reviews", reviewRoute); // reviews is getting from reviewRoute which is save in ./routes/review.js
+app.use("/", itemsRoute); // items is getting from itemsRoute which is save in ./routes/items.js
 
 
 // Error Handling Route
