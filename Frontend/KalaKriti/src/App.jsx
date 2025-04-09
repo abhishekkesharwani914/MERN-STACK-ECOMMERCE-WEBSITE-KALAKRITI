@@ -19,7 +19,7 @@ function App() {
       <Navbar/>
       <ToastContainer/>
       <Routes>
-        <Route path="/items" element={<Home/>} />
+        <Route path="/" element={<Home/>} />
         <Route path="/items/:id" element={<Product/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/reset-password" element={<ResetPassword/>} />

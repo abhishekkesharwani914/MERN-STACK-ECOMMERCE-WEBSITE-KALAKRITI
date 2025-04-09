@@ -13,7 +13,7 @@ const api = axios.create({
 // This method is used to get the items from the backend. It sends a get request to the backend with the options object which contains the credentials and other options.
 // It returns a promise which resolves to the response of the request.
 export const getItems = () =>{
-    return api.get("items");
+    return api.get("/");
 }
 
 //get Id method
