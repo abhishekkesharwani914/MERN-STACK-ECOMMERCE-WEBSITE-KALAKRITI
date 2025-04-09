@@ -29,10 +29,6 @@ export const AppContextProvider = (props) => {
             setLoading(false)
           }
     };
-      
-    useEffect(() => {
-      fetchOrderData();
-    }, []);
 
     //Getting Cart Items
     const cartItems = async () => {
@@ -122,6 +118,7 @@ export const AppContextProvider = (props) => {
             cartItems(); // Fetch cart items only if the user is logged in
             setIsCartFetched(true);
         }
+        fetchOrderData();
     }, [isLoggedIn, isCartFetched]);
 
     // value is an object which is used to pass the data to the child components and it is used to store the data in the context API
