@@ -11,7 +11,6 @@ export const AppContextProvider = (props) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     const [userData, setUserData] = useState(false)
     const [cart, setCart] = useState([])
-    const [isCartFetched, setIsCartFetched] = useState(false);
     const [orders, setOrders] = useState([])
     const [loading, setLoading] = useState(true);
 
@@ -113,13 +112,10 @@ export const AppContextProvider = (props) => {
 
     // UseEffect to get the user state and user data when the component is mounted or refreshed
     useEffect(() => {
-        getUserState(); // Check if the user is logged in
-        if (isLoggedIn && cart.length === 0 && !isCartFetched) {
-            cartItems(); // Fetch cart items only if the user is logged in
-            setIsCartFetched(true);
-        }
+        getUserState(); 
+        cartItems(); 
         fetchOrderData();
-    }, [isLoggedIn, isCartFetched]);
+    },[]);
 
     // value is an object which is used to pass the data to the child components and it is used to store the data in the context API
     const value = {
