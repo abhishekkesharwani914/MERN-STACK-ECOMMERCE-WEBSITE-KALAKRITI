@@ -42,8 +42,8 @@ module.exports.stripePayment = async (req,res) => {
                 payment_method_types: ['card'],
                 line_items: line_items,
                 mode: 'payment',
-                success_url: `http://localhost:5173/orders`,
-                cancel_url: `http://localhost:5173/cart`,
+                success_url: `${process.env.CLIENT_URL}/orders`,
+                cancel_url: `${process.env.CLIENT_URL}/cart`,
             })
 
             
